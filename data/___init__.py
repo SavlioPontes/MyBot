@@ -1,0 +1,1 @@
+from .connection import inicializar_banco

@@ -1,1 +1,1 @@
-from .connection import inicializar_banco
+from .connection import inicializar_banco, conectar

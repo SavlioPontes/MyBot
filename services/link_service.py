@@ -1,4 +1,4 @@
-from .data import conectar
+from data import conectar
 
 def add_link(nome, url):
     conexao = conectar()
@@ -13,6 +13,13 @@ def add_link(nome, url):
 
 def list_links():
     conexao = conectar()
+    
+    cursor = conexao.execute("SELECT * FROM links")
+    links = cursor.fetchall()
+
+    conexao.close()
+    return links
+    
 
     
     

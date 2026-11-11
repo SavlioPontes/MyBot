@@ -10,7 +10,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """
     await update.message.reply_text(mensagem)
 
-async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def helpme(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     mensagem = f"""Aqui estão os comandos disponíveis:
     /links - Lista todos os links cadastrados.

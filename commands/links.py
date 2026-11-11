@@ -24,7 +24,7 @@ async def rmlink(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     remove_link(link_name)
     await update.message.reply_text(f"'{link_name}' removido com sucesso!")
 
-def context_Validation(context: ContextTypes.DEFAULT_TYPE, min_args: int) -> bool:
+def contextValidation(context: ContextTypes.DEFAULT_TYPE, min_args: int) -> bool:
     return len(context.args) >= min_args
 
 async def editlink(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -36,7 +36,7 @@ async def editlink(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "/editlink nome ambos novo_nome nova_url"
     )
 
-    if not context_Validation(context, 3):
+    if not contextValidation(context, 3):
         await update.message.reply_text(mensagem_uso)
         return
 

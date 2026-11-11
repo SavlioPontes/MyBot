@@ -42,6 +42,7 @@ def edit_link(nome, novo_nome=None, nova_url=None):
 
     elif novo_nome is not None:
         conexao.execute(
+            
             "UPDATE links SET nome = ? WHERE nome = ?",
             (novo_nome, nome)
         )

@@ -17,3 +17,11 @@ def inicializar_banco():
                 url TEXT NOT NULL
             )
         """)
+        conexao.execute(""")
+            CREATE TABLE IF NOT EXISTS eventos (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nome TEXT NOT NULL,
+                data TEXT NOT NULL,
+                hora TEXT NOT NULL
+            )
+        """)

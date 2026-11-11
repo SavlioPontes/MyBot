@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from telegram.ext import ApplicationBuilder, CommandHandler
 
-from commands import start, links, addlink
+from commands import start, links, addlink, rmlink, editlink
 from data import inicializar_banco
 
 def main() -> None:
@@ -17,9 +17,12 @@ def main() -> None:
     inicializar_banco()
 
     app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("help", help))
     app.add_handler(CommandHandler("links", links))
     app.add_handler(CommandHandler("addlink", addlink))
-    app.add_handler(CommandHandler("projects", start))
+    app.add_handler(CommandHandler("rmlink", rmlink))
+    app.add_handler(CommandHandler("editlink", editlink))
+    
 
     app.run_polling()
 

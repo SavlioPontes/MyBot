@@ -6,15 +6,16 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     nome = update.effective_user.first_name
 
     mensagem = f"""Olá, {nome}! Vamos começar a trabalhar?
+    Você pode usar o comando /help para ver a lista de comandos disponíveis.
+    """
+    await update.message.reply_text(mensagem)
 
-Você pode utilizar os seguintes comandos:
+async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
-/start - Iniciar o bot
-/help - Listar os comandos disponíveis
-/status - Verificar o servidor
-/bots - Consultar os bots ativos
-/links - Consultar seus links
-/codigo - Consultar códigos salvos
-"""
-
+    mensagem = f"""Aqui estão os comandos disponíveis:
+    /links - Lista todos os links cadastrados.
+    /addlink <nome> <url> - Adiciona um novo link com o nome e a URL fornecidos.
+    /rmlink <nome> - Remove o link com o nome fornecido.
+    /help - Mostra esta mensagem de ajuda.
+    """
     await update.message.reply_text(mensagem)

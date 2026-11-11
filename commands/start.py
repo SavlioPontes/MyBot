@@ -16,6 +16,7 @@ async def helpme(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     /links - Lista todos os links cadastrados.
     /addlink <nome> <url> - Adiciona um novo link com o nome e a URL fornecidos.
     /rmlink <nome> - Remove o link com o nome fornecido.
+    /editlink <nome> <nome|url|ambos> <novo_nome|nova_url> - Edita o link com o nome fornecido.
     /help - Mostra esta mensagem de ajuda.
     """
     await update.message.reply_text(mensagem)
